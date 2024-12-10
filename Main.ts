@@ -49,7 +49,7 @@ export function main() {
     }
 }
 function menu(): void {
-    console.log(colors.bg.black, colors.fg.green)
+    console.log(colors.fg.blue)
     console.log("\n**************************************\n")
 
     console.log("*         banco tilaska              *\n")
@@ -65,15 +65,19 @@ function menu(): void {
     console.log("8 - transferir valores entre contas  *")
     console.log("9 - sair                             *")
     console.log("**************************************")
+    console.log(colors.reset)
 }
 
 
+
 function about(): void {
+    console.log(colors.fg.blue)
     console.log("**************************************")
     console.log("banco tilaska ele tilaska e tiroba")
     console.log("**************************************")
     console.log("Projeto desenvolvido por: João Henrique")
     console.log("git hub: https://github.com/Jhacss?tab=repositories")
+    console.log(colors.reset)
 }
 
 

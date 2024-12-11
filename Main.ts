@@ -1,51 +1,75 @@
 import readlinesync = require("readline-sync")
-import { colors } from "./utill/Cores"
-let opcao: number;
+import { colors } from "./src/utill/Cores"
+import { Conta } from "./src/model/Conta"
+
 
 export function main() {
+    let opcao: number;
+    
+    //cria novas instancias(objetos) da classe conta
+    const conta1 = new Conta(1, 123, 1, "Joao", 10000)
+    conta1.visualizar()
 
-    while(true){
-    menu()
+    //deposito
+    conta1.depositar(1200)
+    conta1.visualizar()
+    
+    const conta2 = new Conta(2, 456, 1, "Josiane", 20000)
+    conta2.visualizar()
+   
+    //saque
+    console.log(conta2.sacar(200))
+    conta2.visualizar()
 
-    opcao = readlinesync.questionInt("digite uma opcao: ")
+    
 
-    if (opcao === 9) {
-        about();
-        process.exit(0)
-    }}
 
-    switch (opcao) {
-        case 1:
-            console.log("criar conta ")
-            break;
 
-        case 2:
-            console.log("listar todas as contas: ")
-            break;
 
-        case 3:
-            console.log("buscar conta por numero: ")
-            break;
+    while (true) {
+        menu()
 
-        case 4:
-            console.log("atualizar dados da conta: ")
-            break;
+        opcao = readlinesync.questionInt("digite uma opcao: ")
 
-        case 5:
-            console.log("apagar conta: ")
-            break;
+        if (opcao === 9) {
+            about();
+            process.exit(0)
+        }
 
-        case 6:
-            console.log("sacar: ")
-            break;
 
-        case 7:
-            console.log("depositar: ")
-            break;
+        switch (opcao) {
+            case 1:
+                console.log("criar conta ")
+                break;
 
-        case 8:
-            console.log("transferir valores entre contas ")
-            break;
+            case 2:
+                console.log("listar todas as contas: ")
+                break;
+
+            case 3:
+                console.log("buscar conta por numero: ")
+                break;
+
+            case 4:
+                console.log("atualizar dados da conta: ")
+                break;
+
+            case 5:
+                console.log("apagar conta: ")
+                break;
+
+            case 6:
+                console.log("sacar: ")
+                break;
+
+            case 7:
+                console.log("depositar: ")
+                break;
+
+            case 8:
+                console.log("transferir valores entre contas ")
+                break;
+        }
     }
 }
 function menu(): void {

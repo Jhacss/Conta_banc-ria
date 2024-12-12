@@ -1,20 +1,34 @@
 import readlinesync = require("readline-sync")
 import { colors } from "./src/utill/Cores"
 import { Conta } from "./src/model/Conta"
-
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupança";
 
 export function main() {
     let opcao: number;
+
+const cp2 = new ContaPoupanca (4, 222, 2, "josealdo", 200000, 2)
+
+cp2.visualizar();
     
+ const cc1 = new ContaCorrente (3, 789, 1, "andressa", 100000, 1000);
+ cc1.visualizar();
+
+ cc1.sacar(100500);
+ cc1 .visualizar();
+
+ cc1.depositar(2000);
+ cc1.visualizar();
+
     //cria novas instancias(objetos) da classe conta
-    const conta1 = new Conta(1, 123, 1, "Joao", 10000)
-    conta1.visualizar()
+   const conta1 = new Conta(1, 123, 1, "Joao", 10000)
+   conta1.visualizar()
 
     //deposito
     conta1.depositar(1200)
     conta1.visualizar()
     
-    const conta2 = new Conta(2, 456, 1, "Josiane", 20000)
+    const conta2 = new Conta(2, 456, 1, "Jose", 20000)
     conta2.visualizar()
    
     //saque

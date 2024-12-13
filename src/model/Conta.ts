@@ -1,14 +1,15 @@
-export class Conta{
+export abstract class Conta{
     //Modelo de dados
     private _numero: number;
     private _agencia: number;
     private _tipo: number;
     private _titular: string;
     private _saldo: number;
-
+    
+         
     //Geramos o Método construtor
     constructor(numero: number, agencia: number, tipo: number, titular: string, saldo: number) {
-        this._numero = numero;
+        this._numero = numero; 
         this._agencia = agencia;
         this._tipo = tipo;
         this._titular = titular;

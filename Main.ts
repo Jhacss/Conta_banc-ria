@@ -5,7 +5,7 @@ import { ContaPoupanca } from "./src/model/ContaPoupança";
 import { ContaController } from "./src/controller/ContaControler";
 
 export function main() {
-    let opcao, numero, agencia, tipo, saldo, limite, aniversario: number;
+    let opcao, numero, agencia, tipo, saldo, limite, aniversario, numeroDestino, valor: number;
     let titular: string;
     const tipoContas = [`Conta Corrente`, `Conta poupança`];
 
@@ -136,14 +136,44 @@ export function main() {
 
             case 6:
                 console.log("sacar: ")
+                
+                console.log("Digite o numero da conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o valor do saque: ");
+                valor = readlinesync.questionFloat("");
+
+                contas.sacar(numero, valor);
                 break;
 
             case 7:
                 console.log("depositar: ")
+
+                console.log("Digite o numero da conta: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o valor do depósito: ");
+                valor = readlinesync.questionFloat("");
+
+                contas.depositar(numero, valor);
                 break;
 
             case 8:
                 console.log("transferir valores entre contas ")
+
+                console.log("Digite o numero da conta de origem: ");
+                numero = readlinesync.questionInt("");
+
+                console.log("Digite o numero da conta de estino: ");
+                numeroDestino = readlinesync.questionInt("");
+
+                console.log("Digite o valor da transferência: ");
+                valor = readlinesync.questionFloat("");
+
+                contas.transferir(numero, numeroDestino, valor);
+
+                keyPress()
+
                 break;
         }
     }

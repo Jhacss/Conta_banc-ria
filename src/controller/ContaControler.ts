@@ -64,17 +64,47 @@ export class ContaController implements ContaRpository {
         console.log("\nConta não encontrada para atualizar!");
       }
   }
-
+//metodos bancarios
   sacar(numero: number, valor: number): void {
-    console.log("Método sacar não implementado.");
+    const buscaConta =this.buscarNoArray(numero)
+
+    if (buscaConta !== null) {
+       if(buscaConta.sacar(valor) === true)
+
+       console.log("O saque foi efetuado com sucesso!")
+      } else {
+        console.log("\nConta não encontrada para atualizar!");
+      }
   }
 
   depositar(numero: number, valor: number): void {
-    console.log("Método depositar não implementado.");
+    const buscaConta =this.buscarNoArray(numero)
+
+    if (buscaConta !== null) {
+       buscaConta.depositar(valor)
+
+       console.log("O Deposito foi efetuado com sucesso!")
+      } else {
+        console.log("\nConta não encontrada!");
+      }
   }
+  
 
   transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
-    console.log("Método transferir não implementado.");
+ 
+ const contaOrigem = this.buscarNoArray(numeroOrigem)
+  const contaDestino = this.buscarNoArray(numeroDestino)
+
+  if (contaOrigem !== null && contaDestino !== null){
+    if(contaOrigem.sacar(valor) === true){
+        contaDestino.depositar(valor);
+        console.log("A transferencia foi efetuada com sucesso!");
+    }else{
+        console.log("\n conta de origem e/ou conta de destonos não encontrada!")
+    }
+    
+  }
+  
   }
 
   // Método para gerar um número único para as contas

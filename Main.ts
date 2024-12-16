@@ -29,7 +29,7 @@ export function main() {
 
         opcao = readlinesync.questionInt("digite uma opcao: ")
 
-        if (opcao === 9) {
+        if (opcao === 0) {
             about();
             process.exit(0)
         }
@@ -175,6 +175,17 @@ export function main() {
                 keyPress()
 
                 break;
+                
+                case 9:
+                    console.log("Consulta por nome do titular:")
+                    console.log("digite o nome do titular: ")
+                    titular = readlinesync.question("")
+
+                    contas.procurarPorTitular(titular);
+
+                    keyPress()
+                    break;
+
         }
     }
 }
@@ -182,7 +193,7 @@ function menu(): void {
     console.log(colors.fg.blue)
     console.log("\n**************************************\n")
 
-    console.log("*         banco tilaska              *\n")
+    console.log("*             bank create             *\n")
 
     console.log("**************************************")
     console.log("1 - criar conta                      *")
@@ -193,7 +204,8 @@ function menu(): void {
     console.log("6 - sacar                            *")
     console.log("7 - depositar                        *")
     console.log("8 - transferir valores entre contas  *")
-    console.log("9 - sair                             *")
+    console.log("9 - buscar por titular               *")
+    console.log("0 - sair                             *")
     console.log("**************************************")
     console.log(colors.reset)
 }
@@ -203,7 +215,7 @@ function menu(): void {
 function about(): void {
     console.log(colors.fg.blue)
     console.log("**************************************")
-    console.log("banco tilaska ele tilaska e tiroba")
+    console.log("bank created for you")
     console.log("**************************************")
     console.log("Projeto desenvolvido por: João Henrique")
     console.log("git hub: https://github.com/Jhacss?tab=repositories")

@@ -1,7 +1,7 @@
 import { Conta } from "../model/Conta";
-import { ContaRpository } from "../repository/ContaRepository";
+import { ContaRepository } from "../repository/ContaRepository";
 
-export class ContaController implements ContaRpository {
+export class ContaController implements ContaRepository {
   
   // Coleção Array que vai armazenar os objetos Conta
   private listacontas = new Array<Conta>();

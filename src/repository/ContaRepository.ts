@@ -1,6 +1,6 @@
 import { Conta } from "../model/Conta";
 
-export interface ContaRpository{
+export interface ContaRepository{
 
     //Metodos do CRUD(create, read, update e delete)
     procurarPorNumero(numero: number): void;

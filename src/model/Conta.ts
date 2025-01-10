@@ -7,7 +7,7 @@ export abstract class Conta{
     private _saldo: number;
     
          
-    //Geramos o Método construtor
+    //Geramos o Método construtor (Ctrl + shift + P)
     constructor(numero: number, agencia: number, tipo: number, titular: string, saldo: number) {
         this._numero = numero; 
         this._agencia = agencia;
